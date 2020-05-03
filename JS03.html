@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- google fonts -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Random Quotes Generator</title>
+	<style type="text/css">
+	body{
+		background-color: crimson;
+		height: 100vh;
+		text-align: center;
+		padding: 100px;
+	}
+	.container{
+		background-color: #fff;
+		width: 120vh;
+		height: 60vh;
+		padding: 40px;
+		border-left: 6px solid lime;
+		position: absolute;
+		left: 35vh;
+		border-radius: 10px 10px 10px 10px;
+	}
+	.quote-text{
+		height: 20vh;
+
+	}
+	.container h3{
+		font-size: 35px;
+		text-align: left;
+		color: maroon;
+	}
+	.container p{
+		text-transform: capitalize;
+		color: green;
+		text-align: right;
+		font-style: italic;
+		font-size: 30px;
+
+	}
+	.container button{
+		border-radius: 15px 15px 15px 15px;
+		font-size: 25px;
+		padding: 10px 20px;
+		background: linear-gradient(black,green);
+		color: white;
+		text-transform: uppercase;
+		border-color: red;
+	}
+	#btn:hover{
+		color: #191716;
+		background-color: white;
+	}
+
+		
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row max-height align-items-center">
+			<div class="col-11 mx-auto col-md-6 quote-container p-5">
+		     <button class="btn-outline-primary text-capitalize my-4 d-block mx-auto" id="generate-btn">Generate Quotes</button>
+		     <h3 class="text-muted"><span class="quote-icon mr-3"><i class="fa fa-quote-left fa-3x"></i></span><span id="quote"></span>The good you do today will be forgotten tomorrow.Do good anyway.</h3>
+		     <p id="author"> ~ Kent M. Keith</p>
+		 </div>
+		</div>
+	</div>
+
+
+	<!-- script js -->
+	<script> //immediate invoked function expression
+	(function(){
+		const quotes = [
+		{
+			quote: "Sucess is most achieved by those who don't know that failure is inevitable.",
+			author: "~ Coco Chanel "
+
+		},
+		{
+			quote: "The good you do today will be forgotten tomorrow.Do good anyway.",
+            author: "~ Kent M. Keith "
+
+		},
+
+		{
+			quote: "Folks are usually about as happy as they make their minds up to be.",
+            author: "~ Abraham Lincoln"
+
+		},
+
+		{
+			quote: "The first step toward success is taken when you refuse to be a captive of the environment in which you first find yourself.",
+			author: "~ Mark Caine "
+          },
+
+          {
+			quote: "A successful man is one who can lay a firm foundation with the bricks others have thrown at him.",
+            author: "~ David Brinkley"
+
+		},
+
+		];
+
+		const btn = document.getElementById("generate-btn");
+		btn.addEventListener("click", function(){
+			let random =Math.floor(Math.random() * quotes.length); //quotes.length
+			console.log(random);
+
+			document.getElementById("quote").textContent =quotes[random].quote;
+			document.getElementById("author").textContent =quotes[random].author;
+			
+		});
+		
+
+
+		
+	})();
+		
+	</script>
+
+</body>
+</html>
